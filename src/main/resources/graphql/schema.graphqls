@@ -1,0 +1,18 @@
+type Query {
+    getAllExpense: [Expense]
+    getExpenseByName(name: String): Expense
+    getExpenseByCategoryNameAndAmount(amount: Float, categoryName: String): [Expense]
+    getAllExpensesInPage(pageNo: Int!, pageSize: Int!, sortBy: String!): [Expense]
+}
+
+type Expense {
+    id: ID!
+    expenseName: String
+    expenseCategory: String
+    expenseAmount: Float
+}
+
+
+type Mutation {
+    addExpense(expenseName: String!, expenseCategory: String!, expenseAmount: Float): Expense
+}
